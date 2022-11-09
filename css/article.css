@@ -1,0 +1,9 @@
+article {
+    margin-top: 16px;
+}
+
+.mdc-card {
+    width: 60%;
+    padding: 16px;
+    margin: 1% 20%;
+}

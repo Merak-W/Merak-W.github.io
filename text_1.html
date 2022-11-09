@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket笔记</title>
+
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/article.css">
+
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+
+</head>
+
+<body>
+    <article>
+        <div class="mdc-card">
+            <section class="mdc-card__primary">
+                <h1 class="mdc-card__title">Socket笔记</h1>
+            </section>
+        </div>
+
+        <div class="mdc-card">
+            <p>
+                <strong>Socket通常被成为“套接字”，用于描述IP地址和端口，是一个通信链的句柄</strong><br />
+                是对TCP/IP协议的封装和应用
+            </p>
+            <img src="./image/socket.png" style="width: 70%; margin: 5% 15%">
+            <p>
+                <strong>根据连接启动方式以及本地套接字要连接的目标，套接字之间的连接过程分为三步：</strong><br />
+                1. 服务器监听：服务器端套接字实时监控网络状态，处于等待连接的状态，不定位具体的客户端套接字<br />
+                2. 客户端请求：是指由客户端的套接字提出连接请求，连接目标是服务器端的套接字。客户端套接字首先指出
+                服务器端套接字的地址和端口号，然后提出连接请求<br />
+                3. 连接确认：当服务器端套接字监听到/接收到客户端套接字的连接请求，就响应客户端套接字的请求，建立一个
+                新的的线程，把服务器端套接字的描述发给客户端，客户端确认此描述，连接就确认好了。服务器端套接字会继续
+                处于监听状态，继续接收其他客户端套接字的连接请求
+            </p>
+            <p>
+                Q：通信双方如何进行端口绑定？<br />
+                A：服务器启动时会绑定一个端口提供服务，客户端在发起连接请求时会随机分配一个端口号
+            </p>
+            <br />
+            <p>
+                Socket一般用于比较即时的通信和实时性较高的情况，比如推送、聊天、保持心跳长连接<br />
+                HTTP一般用于实时性要求不那么高的情况，比如信息反馈，图片上传，获取信息等<br />
+                <br />
+                Socket一旦连接上了就会一直保持连接，造成阻塞IO<br />
+                阻塞IO是指客户端请求服务器端，服务器端进行处理后返回值给客户端。但当客户端太多、同时并发请求的时候，服务器端就会处理不过来。<br />
+                因此提出了非阻塞IO，客户端请求服务器端，服务器端有一些监听器负责接受请求，接受好了就告诉客户端已经接受好了，处理后把数据发给客户端。
+            </p>
+        </div>
+    </article>
+</body>
+
+</html>

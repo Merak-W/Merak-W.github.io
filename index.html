@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="mdc-typography" lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merak的博客</title>
+
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/basic.css">
+
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+
+    <style>
+        #myCarousel {
+            width: 60%;
+            height: 40%;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #myCarousel img {
+            width: 100%;
+        }
+
+        a {
+            color: black;
+            border-radius: 4px;
+        }
+
+        .card_left {
+            float: left;
+            margin-left: 20%;
+            width: 29%;
+            border-radius: 4px;
+        }
+
+        .card_right {
+            float: right;
+            margin-right: 20%;
+            width: 29%;
+            border-radius: 4px;
+        }
+
+        .mdc-card {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 16px;
+        }
+
+        .mdc-card:hover {
+            box-shadow: #ccc 0px 4px 4px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <!-- <p>MY BLOG</p> -->
+            <li data-target="myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="myCarousel" data-slide-to="1"></li>
+            <li data-target="myCarousel" data-slide-to="2"></li>
+            <li data-target="myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active"><img src="./image/carousel_1.jpg" alt="第一张"></div>
+            <div class="item"><img src="./image/carousel_2.jpg" alt="第二张"></div>
+            <div class="item"><img src="./image/carousel_3.png" alt="第三张"></div>
+            <div class="item"><img src="./image/carousel_4.jpg" alt="第四张"></div>
+        </div>
+        <a href="#myCarousel" data-slide="prev" class="carousel-control left">&lsaquo;</a>
+        <a href="#myCarousel" data-slide="next" class="carousel-control right">&rsaquo;</a>
+    </div>
+
+    <article class="card">
+        <div class="card_left">
+            <a href="text_1.html">
+                <div class="mdc-card mdc-card__primary-action">
+                    <section class="mdc-card__primary">
+                        <h3 class="mdc-card__title">Socket笔记</h3>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        Socket通常被成为“套接字”，用于描述IP地址和端口，是一个通信链的句柄。
+                        一个套接字就是网络上进程通信的一端，提供了应用层进程利用网络协议交换数据的机制。
+                    </section>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+            </a>
+
+            <a href="text_2.html">
+                <div class="mdc-card mdc-card__primary-action">
+                    <section class="mdc-card__primary">
+                        <h3 class="mdc-card__title">RecyclerView</h3>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        RecyclerView 是作为 ListView 和 GridView 的加强版出现的，目的是在有限的屏幕之上展示大量的内容
+                    </section>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="card_right">
+            <a href="text_3.html">
+                <div class="mdc-card mdc-card__primary-action">
+                    <section class="mdc-card__primary">
+                        <h3 class="mdc-card__title">Retrofit</h3>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        Retrofit是Square公司推出的一个基于RESTful风格的HTTP网络框架
+                    </section>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+            </a>
+
+            <a href="text_4.html">
+                <div class="mdc-card mdc-card__primary-action">
+                    <section class="mdc-card__primary">
+                        <h3 class="mdc-card__title">Handler(消息机制)</h3>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                        Handler是Android消息机制的上层接口，用于跨进程通信。拥有四要素：消息、消息队列、处理者、消息泵
+                    </section>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+            </a>
+        </div>
+    </article>
+</body>
+
+</html>

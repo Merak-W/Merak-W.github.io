@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecyclerView</title>
+
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/article.css">
+
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+
+</head>
+
+<body>
+    <article>
+        <div class="mdc-card">
+            <section class="mdc-card__primary">
+                <h1 class="mdc-card__title">RecyclerView</h1>
+            </section>
+        </div>
+        <div class="mdc-card">
+            <p>
+                <strong>重要组件：</strong><br />
+                1. LayoutManager：管理视图渲染，包含视图复用回收等功能。<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;其本身是一个抽象类，实现的子类有：<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;LinearLayoutanager（线性布局效果）<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;GirdLayoutManager（网格布局效果）<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;StaggeredGridLayoutManager（瀑布流布局效果）<br />
+                2. Adapter：适配器，数据和视图对接的桥梁<br />
+                3. ItemDecoration：装饰抽象类，常常用来实现列表的分割线或实现悬浮等功能<br />
+                4. ItemAnimator：动效抽象类，常用于定制item动画需求<br />
+            </p>
+            <img src="./image/recyclerView.jpeg" style="width: 40%; margin: 5% 30%">
+            <p>
+                <strong>缓存机制：</strong><br />
+                主要靠三个内部类完成<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;• Recycler<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;• ViewCacheExtenetion<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;• RecyclerViewPool<br />
+                1. 首先通过recycler.getViewForPosition()方法，该方法返回ViewHolder对象，
+                该方法会检查mAttachedScrap和一级缓存列表mCachedViews，有则返回ViewHolder进行复用<br />
+                2. 然后调用ViewCacheExtention.getViewForPositionAndType()方法（需要重写）<br />
+                3. 最后检查RecyclerViewPool是否有ViewHolder<br />
+                注：上述三个步骤中只要有一个返回了ViewHolder就不会进行后边步骤。<br />
+            </p>
+            <br />
+            <p>
+                相对于ListView的区别和优点：<br />
+                - RecyclerView缓存RecyclerView.ViewHolder，可理解为View+ViewHolder（避免每次createView时调用findViewById）+flag（标识状态）<br />
+                - ListView缓存View<br />
+                <br />
+                - 亮点在于提供了局部刷新的接口，避免调用许多无用的bindView<br />
+                - ViewHolder编写规范化<br />
+                - RecyclerView复用Item不用像ListView那样自己调用setTag<br />
+                - RecyclerView多一步LayoutManager的设置工作<br />
+            </p>
+
+        </div>
+    </article>
+</body>
+
+</html>

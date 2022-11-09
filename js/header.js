@@ -1,0 +1,17 @@
+document.writeln("<header class=\'mdc-top-app-bar\' style=\'background-color: white;\'>");
+document.writeln("    <div class=\'mdc-top-app-bar__row\' style=\'background-color: white; box-shadow: 0 2px 4px gray;\'>");
+document.writeln("        <section class=\'mdc-top-app-bar__section mdc-top-app-bar__section--align-start\' style=\'padding-left: 20%;\'>");
+document.writeln("            <span class=\'mdc-top-app-bar__title\' style=\'color: black; font-size: 1.75rem;\'>Merak的博客</span>");
+document.writeln("        </section>");
+document.writeln("        <section class=\'mdc-top-app-bar__section mdc-top-app-bar__section--align-end\' style=\'padding-right: 20%;\'");
+document.writeln("            role=\'toolbar\'>");
+document.writeln("            <a class=\'material-icons mdc-top-app-bar__action-item mdc-icon-button\' aria-label=\'Home\' href=\'./index.html\'");
+document.writeln("                style=\'color: black;\'>home</a>");
+document.writeln("            <a class=\'material-icons mdc-top-app-bar__action-item mdc-icon-button\' aria-label=\'Article\' href=\'./index.html#card\'");
+document.writeln("                style=\'color: black;\'>article</a>");
+document.writeln("            <a class=\'material-icons mdc-top-app-bar__action-item mdc-icon-button\' aria-label=\'account_circle\' href=\'./about.html\'");
+document.writeln("                style=\'color: black;\'>account_circle</a>");
+document.writeln("        </section>");
+document.writeln("    </div>");
+document.writeln("</header>");
+document.writeln("<main class=\'mdc-top-app-bar--fixed-adjust\'>");
