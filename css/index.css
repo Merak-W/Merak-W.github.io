@@ -1,0 +1,62 @@
+#myCarousel {
+    width: 60%;
+    height: 40%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#myCarousel img {
+    width: 100%;
+}
+
+a {
+    color: black;
+    border-radius: 4px;
+}
+
+.card_left {
+    float: left;
+    margin-left: 20%;
+    width: 29%;
+    border-radius: 4px;
+}
+
+.card_right {
+    float: right;
+    margin-right: 20%;
+    width: 29%;
+    border-radius: 4px;
+}
+
+.mdc-card {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 16px;
+}
+
+.mdc-card:hover {
+    box-shadow: #ccc 0px 4px 4px;
+}
+
+@media screen and (max-width: 600px) {
+    #myCarousel {
+        width: 96%;
+        height: 40%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .card_left {
+        float: left;
+        width: 46.5%;
+        margin-left: 2%;
+        border-radius: 4px;
+    }
+
+    .card_right {
+        float: right;
+        width: 46.5%;
+        margin-right: 2%;
+        border-radius: 4px;
+    }
+}
