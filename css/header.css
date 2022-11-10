@@ -1,0 +1,31 @@
+.mdc-top-app-bar__row {
+    background-color: white;
+    box-shadow: 0 1px 4px gray;
+}
+
+.mdc-top-app-bar__section--align-start {
+    padding-left: 20%;
+}
+
+.mdc-top-app-bar__section--align-end {
+    padding-right: 20%;
+}
+
+.mdc-top-app-bar__title {
+    color: black;
+    font-size: 1.75rem;
+}
+
+.mdc-top-app-bar .mdc-top-app-bar__action-item {
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .mdc-top-app-bar__section--align-start {
+        padding-left: 0;
+    }
+    
+    .mdc-top-app-bar__section--align-end {
+        padding-right: 0;
+    }
+}

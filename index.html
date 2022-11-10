@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/basic.css">
 
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="node_modules/material-components-web/dist/material-components-web.js"></script>
-    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="./js/header.js"></script>
 
     <style>
         #myCarousel {
@@ -57,6 +58,29 @@
 
         .mdc-card:hover {
             box-shadow: #ccc 0px 4px 4px;
+        }
+
+        @media screen and (max-width: 600px) {
+            #myCarousel {
+                width: 96%;
+                height: 40%;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            .card_left {
+                float: left;
+                width: 46.5%;
+                margin-left: 2%;
+                border-radius: 4px;
+            }
+
+            .card_right {
+                float: right;
+                width: 46.5%;
+                margin-right: 2%;
+                border-radius: 4px;
+            }
         }
     </style>
 
